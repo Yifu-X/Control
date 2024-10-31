@@ -24,7 +24,7 @@ def plot_response(wn, zeta):
     ax.clear()
     ax.plot(t, y, label='阶跃响应', color='b')
     ax.axhline(1, color='r', linestyle='--', label='稳态值')
-    ax.set_title('二阶震荡系统的阶跃响应')
+    ax.set_title('二阶系统的阶跃响应')
     ax.set_xlabel('时间 (秒)')
     ax.set_ylabel('响应')
     ax.legend()
@@ -33,7 +33,7 @@ def plot_response(wn, zeta):
 
     # 固定坐标系的范围
     ax.set_xlim(0, 50)  # X轴范围
-    ax.set_ylim(0, 2)  # Y轴范围
+    ax.set_ylim(0, 3)  # Y轴范围
     plt.draw()
 
 # 创建图形和子图
@@ -48,7 +48,7 @@ ax_wn = plt.axes([0.1, 0.1, 0.65, 0.03])  # 自然频率滑块位置
 wn_slider = Slider(ax_wn, '自然频率', 0.1, 5.0, valinit=wn)
 
 ax_zeta = plt.axes([0.1, 0.15, 0.65, 0.03])  # 阻尼比滑块位置
-zeta_slider = Slider(ax_zeta, '阻尼比', 0.0, 1.0, valinit=zeta)
+zeta_slider = Slider(ax_zeta, '阻尼比', -1.0, 2.0, valinit=zeta)
 
 # 更新函数
 def update(val):
